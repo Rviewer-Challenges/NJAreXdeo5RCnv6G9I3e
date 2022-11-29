@@ -1,0 +1,35 @@
+@import 'settings/_colors.scss';
+@import 'settings/_typography.scss';
+@import 'elements/_button.scss';
+@import 'objects/_list.scss';
+
+ul {
+  @include ul;
+
+  & li {
+    @include li;
+  }
+
+  & li.sticky {
+    @include fw-600;
+    @include fs-6;
+    background: $bg-mobile-light;
+    position: sticky;
+    top: 0;
+    border-bottom: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3px;
+
+    & .subtitle {
+      @include fw-500;
+      @include fs-7;
+    }
+  }
+
+  & li:not(.sticky):nth-child(1n-2) {
+    border-bottom: 1px solid #e2e2e2;
+  }
+
+}

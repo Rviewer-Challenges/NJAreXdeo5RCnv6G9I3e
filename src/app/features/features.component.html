@@ -1,0 +1,9 @@
+<div class="wrapper">
+  <div class="mobile-wrapper">
+    <app-navbar></app-navbar>
+    <div class="mobile" [@routeAnimations]="prepareRouter(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+    <app-alert></app-alert>
+  </div>
+</div>

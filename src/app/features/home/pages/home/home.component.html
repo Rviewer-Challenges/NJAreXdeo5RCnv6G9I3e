@@ -1,0 +1,24 @@
+<div class="hero">
+  <span class="text">Hola, espero que estes hambriento!</span>
+  <app-search-input></app-search-input>
+</div>
+<div class="container">
+  <section class="pizzas">
+    <span class="title">Popular</span>
+    <div class="cards">
+      <div class="card" *ngFor="let pizza of pizzas; let i = index">
+        <figure>
+          <img [src]="'assets/images/pizzas/' + pizza.pathImage" [alt]="pizza.pathImage" class="pizza-image">
+        </figure>
+        <span class="pizza-name">{{ pizza.name }}</span>
+        <span class="ingredients">{{ buildDescription(i) }}</span>
+        <div class="options">
+          <span class="price">{{ pizza.price | currency : '$' }}</span>
+          <div class="cart" (click)="addPizzaToCart(i)">
+            <i class="fa fa-plus"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
